@@ -95,8 +95,7 @@
      python3 phishing_link_scanner
      ```
 or 
-     ```bash
-     
+    
      python phishing_link_scanner.py
      ```
 
@@ -111,7 +110,6 @@ If you encounter issues running the script, ensure that Python is installed on y
 python --version
 ```
 or
-
 ```bash
 python3 --version
 ```
