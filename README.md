@@ -14,7 +14,7 @@
      ```
 
 3. **Paste Your Code into Nano**:
-   - After opening the `nano` editor, paste the password strength checker code into the editor. To paste in a terminal, you can usually use `Ctrl + Shift + V` (on Linux) or `Command + V` (on macOS).
+   - After opening the `nano` editor, paste the phishing_link_scanner code into the editor. To paste in a terminal, you can usually use `Ctrl + Shift + V` (on Linux) or `Command + V` (on macOS).
 
    Here’s the code to paste:
 
