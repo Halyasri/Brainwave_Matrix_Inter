@@ -93,16 +93,17 @@
 
 2. **Run the Script**:
    - Execute the script with the following command:
-     ```bash
-
-     python3 phishing_link_scanner
-         ```
+```bash
+python3 phishing_link_scanner
+```
 or
+```bash
+python phishing_link_scanner.py
+```
 
-     python phishing_link_scanner.py
 
-3. **Test the Functionality**:
-   - Enter various passwords when prompted to see the strength ratings.
+4. **Test the Functionality**:
+   -Enter various URLs when prompted to see if they are flagged as phishing attempts.
 
 
 ### Optional: Check if Python is Installed
