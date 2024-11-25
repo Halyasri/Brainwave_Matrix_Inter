@@ -86,7 +86,7 @@
 5. **Exit Nano**:
    - To exit the nano editor, press `Ctrl + X`.
 
-### Step 4: Run Your Script
+### 4: Run Your Script
 
 1. **Make Sure You’re in the Right Directory**:
    - Verify that you're still in the directory where you saved the file.
