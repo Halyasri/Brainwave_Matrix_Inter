@@ -96,6 +96,7 @@
      ```
 or 
      ```bash
+     
      python phishing_link_scanner.py
      ```
 
