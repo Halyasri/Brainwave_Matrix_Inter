@@ -98,9 +98,7 @@
      python3 phishing_link_scanner
          ```
 or
-     
-     ```bash
-     
+
      python phishing_link_scanner.py
 
 3. **Test the Functionality**:
