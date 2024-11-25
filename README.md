@@ -1,4 +1,4 @@
-# Phishing Link ScannerPassword_Strength_Checker
+# Phishing Link Scanner
 
 ## Installation 
 
@@ -98,6 +98,7 @@
      python3 phishing_link_scanner
          ```
 or
+     
      ```bash
      
      python phishing_link_scanner.py
