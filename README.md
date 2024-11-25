@@ -91,14 +91,13 @@
 
 1. **Run the Script**:
    - Execute the script with the following command:
-     ```bash
-     python3 phishing_link_scanner
-     ```
-or 
-    
-     python phishing_link_scanner.py
-     ```
-
+```bash
+python3 phishing_link_scanner
+```
+or
+```bash
+python phishing_link_scanner.py
+```
 2. **Test the Functionality**:
    - Enter various URLs when prompted to see if they are flagged as phishing attempts.
 
