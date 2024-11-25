@@ -1,1 +1,112 @@
-# Brainwave_Matrix_Intern
+# Phishing Link Scanner
+
+## Installation
+
+### Steps to Save Your Script Using Nano
+
+1. **Open Terminal**:
+   - Launch your terminal application.
+
+2. **Create a New File with Nano**:
+   - To create a new file named `phishing_link_scanner.py`, type:
+     ```bash
+     nano phishing_link_scanner
+     ```
+
+3. **Paste Your Code into Nano**:
+   - Paste the phishing link scanner code into the editor after opening the' nano' editor. You can usually paste it into a terminal using `Ctrl + Shift + V` (on Linux) or `Command + V` (on macOS).
+
+   Here’s the code to paste:
+
+   ```python
+   import requests
+   from bs4 import BeautifulSoup
+
+   def scan_phishing_link(url):
+       """
+       Scans a given URL for phishing indicators.
+
+       Args:
+           url (str): The URL to scan.
+
+       Returns:
+           bool: True if the URL is likely a phishing link, False otherwise.
+       """
+
+       try:
+           response = requests.get(url, timeout=5)
+           soup = BeautifulSoup(response.content, 'html.parser')
+
+           # Check for common phishing indicators
+           if "https" not in url:
+               return True
+
+           # Check for suspicious domains
+           if "login" in url or "account" in url or "verify" in url or "paypal" in url or "amazon" in url:
+               return True
+
+           # Check for unusual website structure
+           if len(soup.find_all("a")) < 5:
+               return True
+
+           # Check for suspicious content
+           if "password" in soup.text.lower() or "credit card" in soup.text.lower():
+               return True
+
+           # Check for suspicious code (e.g., JavaScript that redirects to a different page)
+           if "<script>" in soup.text:
+               return True
+
+           # No suspicious indicators found
+           return False
+
+       except requests.exceptions.Timeout:
+           print("Request timed out.")
+           return True
+
+       except requests.exceptions.RequestException as e:
+           print(f"Error: {e}")
+           return True
+
+   if __name__ == "__main__":
+       while True:
+           url = input("Enter the URL to scan (or 'exit' to quit): ")
+           if url == "exit":
+               break
+
+           if scan_phishing_link(url):
+               print("Warning: This link may be a phishing attempt.")
+           else:
+               print("This link appears to be safe.")
+   ```
+
+4. **Save the File**:
+   - After pasting the code, save the file by pressing `Ctrl + O` (the letter O, not zero).
+   - Nano will prompt you to confirm the file name. Just press `Enter` to confirm.
+
+5. **Exit Nano**:
+   - To exit the nano editor, press `Ctrl + X`.
+
+4. **Run the Script**:
+   - Execute the script with the following command:
+     ```bash
+     python3 phishing_link_scanner.py
+     ```
+
+. **Test the Functionality**:
+   - Enter various URLs when prompted to see if they are flagged as phishing attempts.
+
+### Optional: Check if Python is Installed
+
+If you encounter issues running the script, ensure that Python is installed on your system. You can check this by typing:
+
+```bash
+python --version
+```
+or
+
+```bash
+python3 --version
+```
+
+If Python is not installed, you must download and install it from [python.org](https://www.python.org/).
