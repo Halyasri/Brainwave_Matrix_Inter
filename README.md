@@ -102,7 +102,8 @@ python phishing_link_scanner.py
 ```
 
 
-4. **Test the Functionality**:
+3. **Test the Functionality**:
+   
    -Enter various URLs when prompted to see if they are flagged as phishing attempts.
 
 
