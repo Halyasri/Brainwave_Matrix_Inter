@@ -18,65 +18,67 @@
 
    Here’s the code to paste:
 
-       import requests
-       from bs4 import BeautifulSoup
+       
+       python
+       import requests  
+       from bs4 import BeautifulSoup  
 
-       def scan_phishing_link(url):
-       """
-       Scans a given URL for phishing indicators.
+       def scan_phishing_link(url):  
+       """  
+       Scans a given URL for phishing indicators.  
 
-       Args:
-       url (str): The URL to scan.
+       Args:  
+        url (str): The URL to scan.  
 
-       Returns:
-       bool: True if the URL is likely a phishing link, False otherwise.
-       """
+       Returns:  
+        bool: True if the URL is likely a phishing link, False otherwise.  
+        """  
 
-       try:
-       response = requests.get(url, timeout=5)
-       soup = BeautifulSoup(response.content, 'html.parser')
+       try:  
+        response = requests.get(url, timeout=5)  
+        soup = BeautifulSoup(response.content, 'html.parser')  
 
-       # Check for common phishing indicators
-       if "https" not in url:
-       return True
+        # Check for common phishing indicators  
+        if "https" not in url:  
+            return True  
 
-       # Check for suspicious domains
-       if "login" in url or "account" in url or "verify" in url or "paypal" in url or "amazon" in url:
-       return True
+        # Check for suspicious domains  
+        if "login" in url or "account" in url or "verify" in url or "paypal" in url or "amazon" in url:  
+            return True  
 
-       # Check for unusual website structure
-       if len(soup.find_all("a")) < 5:
-       return True
+        # Check for unusual website structure  
+        if len(soup.find_all("a")) < 5:  
+            return True  
 
-       # Check for suspicious content
-       if "password" in soup.text.lower() or "credit card" in soup.text.lower():
-       return True
+        # Check for suspicious content  
+        if "password" in soup.text.lower() or "credit card" in soup.text.lower():  
+            return True  
 
-       # Check for suspicious code (e.g., JavaScript that redirects to a different page)
-       if "<script>" in soup.text:
-       return True
+        # Check for suspicious code (e.g., JavaScript that redirects to a different page)  
+        if "<script>" in soup.text:  
+            return True  
 
-       # No suspicious indicators found
-       return False
+        # No suspicious indicators found  
+        return False  
 
-       except requests.exceptions.Timeout:
-       print("Request timed out.")
-       return True
+       except requests.exceptions.Timeout:  
+        print("Request timed out.")  
+        return True  
 
-       except requests.exceptions.RequestException as e:
-       print(f"Error: {e}")
-       return True
+       except requests.exceptions.RequestException as e:  
+        print(f"Error: {e}")  
+        return True  
 
-       if __name__ == "__main__":
-       while True:
-       url = input("Enter the URL to scan (or 'exit' to quit): ")
-       if url == "exit":
-       break
+       if __name__ == "__main__":  
+       while True:  
+        url = input("Enter the URL to scan (or 'exit' to quit): ")  
+        if url == "exit":  
+            break  
 
-       if scan_phishing_link(url):
-       print("Warning: This link may be a phishing attempt.")
-       else:
-       print("This link appears to be safe.")
+        if scan_phishing_link(url):  
+            print("Warning: This link may be a phishing attempt.")  
+        else:  
+            print("This link appears to be safe.")  
        ```
 
 4. **Save the File**:
